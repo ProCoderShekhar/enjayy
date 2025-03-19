@@ -105,7 +105,8 @@ export function getLeaderboardData(): LeaderboardEntry[] {
 // Get leaderboard data excluding the top 3 entries (for the table display)
 export function getLeaderboardDataExcludingTop3(): LeaderboardEntry[] {
   const allEntries = getLeaderboardData();
-  return allEntries.filter(entry => entry.rank > 3);
+  // Filter to only include ranks 4-10 (excluding top 3 which are shown in cards)
+  return allEntries.filter(entry => entry.rank > 3 && entry.rank <= 10);
 }
 
 // Get the top 3 entries for the featured display
