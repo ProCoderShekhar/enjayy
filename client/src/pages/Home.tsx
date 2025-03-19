@@ -237,23 +237,28 @@ const Home = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <BenefitCard
-                icon={<Award size={26} />}
-                title="Rank-Up Rewards"
-                description="Earn up to $22,500 in bonuses as you progress through VIP tiers. Climb the ranks faster with dedicated support."
+                icon={<Award className="w-8 h-8 text-purple-400" />}
+                title="VIP Rewards"
+                description="Earn up to $22,500 in bonuses as you progress through VIP tiers."
+              />
+              <BenefitCard
+                icon={<Trophy className="w-8 h-8 text-blue-400" />}
+                title="Leaderboard"
+                description="Monthly leaderboard with $320+ in guaranteed prizes for top players."
                 delay={0.1}
               />
               <BenefitCard
-                icon={<Trophy size={26} />}
-                title="Competitive Leaderboard"
-                description="Monthly leaderboard with $320+ in guaranteed prizes for top 10 participants. Prize pool increases with total wager."
+                icon={<Gift className="w-8 h-8 text-pink-400" />}
+                title="Giveaways"
+                description="Join weekly streams with $1,500+ in prizes and multiple winners."
                 delay={0.2}
               />
               <BenefitCard
-                icon={<Gift size={26} />}
-                title="Stream Giveaways"
-                description="Join weekly streams with $1,500+ in giveaways. Multiple winners every stream with chances to win up to $500."
+                icon={<Zap className="w-8 h-8 text-indigo-400" />}
+                title="Instant Access"
+                description="Get immediate verification and access to all platform features."
                 delay={0.3}
               />
             </div>
@@ -266,18 +271,21 @@ const Home = () => {
               viewport={{ once: true }}
             >
               <Link href="/stream-rewards">
-                <a className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 text-white font-medium hover:opacity-90 transition">
+                <div className="inline-flex items-center justify-center px-6 py-3 rounded-lg gradient-border glass-button text-white font-medium transition cursor-pointer">
                   See All Benefits
-                  <ChevronRight size={18} className="ml-1" />
-                </a>
+                  <ChevronRight size={18} className="ml-2" />
+                </div>
               </Link>
             </motion.div>
           </div>
         </section>
 
         {/* Leaderboard Preview Section */}
-        <section className="py-20 bg-gradient-to-b from-slate-950 to-black">
-          <div className="container mx-auto px-4">
+        <section className="py-20 relative">
+          <div className="absolute top-[-20%] right-[-5%] w-[30%] h-[40%] bg-blue-600/10 rounded-full filter blur-[100px]"></div>
+          <div className="absolute bottom-[-10%] left-[-5%] w-[40%] h-[30%] bg-purple-600/10 rounded-full filter blur-[120px]"></div>
+          
+          <div className="container mx-auto px-4 relative z-10">
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 20 }}
@@ -285,21 +293,30 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 <span className="text-white">Monthly </span>
-                <span className="text-sky-400">Leaderboard</span>
+                <span className="gradient-text">Leaderboard</span>
               </h2>
               <p className="text-lg text-gray-300 max-w-3xl mx-auto">
                 Compete with other players for a share of $320+ in monthly rewards. Top 10 spots receive guaranteed prizes.
               </p>
             </motion.div>
 
-            <div className="bg-black/30 rounded-xl overflow-hidden border border-sky-900/30 max-w-4xl mx-auto">
-              <div className="p-6 border-b border-sky-900/20 bg-black/50">
+            <motion.div 
+              className="glass-card rounded-2xl overflow-hidden max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+              <div className="p-6 border-b border-white/5 bg-white/5">
                 <div className="flex justify-between items-center">
-                  <h3 className="text-xl font-semibold">Current Leaders</h3>
-                  <div className="text-sm text-gray-400">
-                    <span className="text-sky-400 font-semibold">12</span> days remaining
+                  <h3 className="text-xl font-bold flex items-center">
+                    <Trophy className="text-purple-400 mr-2" size={20} />
+                    Current Leaders
+                  </h3>
+                  <div className="glass-card px-3 py-1 rounded-full text-sm">
+                    <span className="gradient-text font-semibold">12</span> days remaining
                   </div>
                 </div>
               </div>
@@ -319,7 +336,7 @@ const Home = () => {
                       {/* Top 3 leaderboard entries */}
                       <LeaderboardRow 
                         rank={1} 
-                        rankStyle="bg-sky-400 text-black" 
+                        rankStyle="bg-gradient-to-r from-purple-500 to-blue-500 text-white" 
                         player="JackpotKing" 
                         initial="J" 
                         wager="$143,250" 
@@ -328,7 +345,7 @@ const Home = () => {
                       />
                       <LeaderboardRow 
                         rank={2} 
-                        rankStyle="bg-gray-300 text-black" 
+                        rankStyle="bg-gradient-to-r from-blue-500 to-indigo-500 text-white" 
                         player="SpinMaster" 
                         initial="S" 
                         wager="$98,750" 
@@ -337,7 +354,7 @@ const Home = () => {
                       />
                       <LeaderboardRow 
                         rank={3} 
-                        rankStyle="bg-amber-600 text-black" 
+                        rankStyle="bg-gradient-to-r from-pink-500 to-purple-500 text-white" 
                         player="VegasRoller" 
                         initial="V" 
                         wager="$76,320" 
@@ -349,49 +366,59 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="p-6 border-t border-sky-900/20 bg-black/20 text-center">
+              <div className="p-6 border-t border-white/5 text-center">
                 <Link href="/leaderboard">
-                  <a className="inline-flex items-center justify-center px-5 py-2 text-sm rounded-lg bg-sky-900/40 text-sky-400 font-medium hover:bg-sky-900/60 transition">
+                  <div className="inline-flex items-center justify-center px-5 py-2 rounded-lg glass-button text-white font-medium cursor-pointer">
                     View Full Leaderboard
-                    <ChevronRight size={16} className="ml-1" />
-                  </a>
+                    <ChevronRight size={16} className="ml-2" />
+                  </div>
                 </Link>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-b from-black to-slate-950">
-          <div className="container mx-auto px-4">
+        <section className="py-20 relative">
+          <div className="absolute top-[-30%] right-[-10%] w-[50%] h-[60%] bg-gradient-to-b from-purple-600/10 via-blue-500/5 to-transparent skew-x-12 z-0"></div>
+          
+          <div className="container mx-auto px-4 relative z-10">
             <motion.div 
-              className="max-w-4xl mx-auto p-10 rounded-2xl bg-gradient-to-r from-sky-900/20 to-blue-900/20 border border-sky-900/30 text-center"
+              className="gradient-border glass-card rounded-2xl p-10 md:p-12 relative overflow-hidden max-w-4xl mx-auto text-center"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.7 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Ready to <span className="text-sky-400">Claim Your Rewards?</span>
-              </h2>
-              <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-                Join Stake.com today and start using code PENNY to unlock exclusive benefits, monthly leaderboard prizes, and stream giveaways.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="https://stake.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 text-white font-medium hover:opacity-90 transition"
-                >
-                  Sign Up Now
-                  <ChevronRight size={18} className="ml-1" />
-                </a>
-                <Link href="/stream-rewards">
-                  <a className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white/10 text-white font-medium hover:bg-white/15 transition">
-                    Explore Benefits
-                  </a>
-                </Link>
+              <div className="absolute top-[-50%] right-[-10%] w-[40%] h-[300%] bg-gradient-to-b from-purple-500/30 via-blue-500/20 to-transparent skew-x-12 z-0"></div>
+              
+              <div className="relative z-10">
+                <h2 className="text-3xl md:text-5xl font-bold mb-6">
+                  Ready to <span className="gradient-text">Claim Your Rewards?</span>
+                </h2>
+                <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+                  Join Stake.com today and start using code <span className="gradient-text font-bold">PENNY</span> to unlock exclusive benefits, monthly leaderboard prizes, and stream giveaways.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-5 justify-center">
+                  <motion.a
+                    href="https://stake.com/?c=penny"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="gradient-button inline-flex items-center justify-center px-8 py-4 rounded-lg text-white font-bold shadow-lg shadow-purple-500/20"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    Sign Up Now
+                    <ChevronRight size={20} className="ml-2" />
+                  </motion.a>
+                  <Link href="/stream-rewards">
+                    <div className="glass-button inline-flex items-center justify-center px-8 py-4 rounded-lg text-white font-bold cursor-pointer">
+                      Explore Benefits
+                      <ChevronRight size={18} className="ml-2" />
+                    </div>
+                  </Link>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -432,16 +459,17 @@ interface BenefitCardProps {
 const BenefitCard = ({ icon, title, description, delay = 0 }: BenefitCardProps) => {
   return (
     <motion.div
-      className="bg-black/30 rounded-xl border border-sky-900/30 p-6 hover:bg-sky-900/10 transition-colors"
+      className="glass-card-hover rounded-xl p-6 relative overflow-hidden"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay }}
+      transition={{ duration: 0.5, delay }}
       viewport={{ once: true }}
+      whileHover={{ y: -5 }}
     >
-      <div className="w-12 h-12 rounded-full bg-sky-900/30 flex items-center justify-center mb-4 text-sky-400">
+      <div className="w-14 h-14 rounded-xl bg-white/5 backdrop-blur-sm flex items-center justify-center mb-4">
         {icon}
       </div>
-      <h3 className="text-xl font-semibold mb-3 text-white">{title}</h3>
+      <h3 className="text-xl font-bold mb-3">{title}</h3>
       <p className="text-gray-400">{description}</p>
     </motion.div>
   );
@@ -460,27 +488,28 @@ interface LeaderboardRowProps {
 const LeaderboardRow = ({ rank, rankStyle, player, initial, wager, prize, delay = 0 }: LeaderboardRowProps) => {
   return (
     <motion.tr 
-      className="border-b border-sky-900/10"
+      className="border-b border-white/5"
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.4 }}
       viewport={{ once: true }}
+      whileHover={{ backgroundColor: "rgba(255, 255, 255, 0.03)" }}
     >
       <td className="px-4 py-4">
-        <div className={`flex items-center justify-center w-8 h-8 rounded-full ${rankStyle} font-bold`}>
+        <div className={`flex items-center justify-center w-9 h-9 rounded-md ${rankStyle} font-bold shadow-md`}>
           {rank}
         </div>
       </td>
       <td className="px-4 py-4">
         <div className="flex items-center">
-          <div className="w-8 h-8 rounded-full bg-sky-900/30 flex items-center justify-center mr-3">
-            <span className="font-bold">{initial}</span>
+          <div className="w-9 h-9 rounded-full glass-card flex items-center justify-center mr-3">
+            <span className="font-bold gradient-text">{initial}</span>
           </div>
-          <span>{player}</span>
+          <span className="font-medium">{player}</span>
         </div>
       </td>
       <td className="px-4 py-4 font-medium">{wager}</td>
-      <td className="px-4 py-4 text-sky-400 font-semibold">{prize}</td>
+      <td className="px-4 py-4 gradient-text font-bold">{prize}</td>
     </motion.tr>
   );
 };
