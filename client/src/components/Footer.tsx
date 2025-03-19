@@ -1,25 +1,47 @@
 import { Link } from "wouter";
-import { Github, Twitter, Instagram, ExternalLink } from "lucide-react";
+import { MessageCircle, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
+import { SiKick, SiDiscord, SiYoutube, SiTwitch, SiInstagram, SiX } from "react-icons/si";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
     {
-      name: "Twitter",
-      url: "https://twitter.com",
-      icon: <Twitter size={18} />,
+      name: "Kick",
+      url: "http://kick.com/enjayy",
+      icon: <SiKick size={18} />,
+      color: "text-[#53fc18]"
+    },
+    {
+      name: "Discord",
+      url: "https://discord.gg/enjayy",
+      icon: <SiDiscord size={18} />,
+      color: "text-[#5865F2]"
+    },
+    {
+      name: "YouTube",
+      url: "https://www.youtube.com/@EnjayyLive",
+      icon: <SiYoutube size={18} />,
+      color: "text-[#FF0000]"
+    },
+    {
+      name: "X",
+      url: "https://x.com/imEnjayy",
+      icon: <SiX size={18} />,
+      color: "text-white"
     },
     {
       name: "Instagram",
-      url: "https://instagram.com",
-      icon: <Instagram size={18} />,
+      url: "https://instagram.com/imenjayy",
+      icon: <SiInstagram size={18} />,
+      color: "text-[#E4405F]"
     },
     {
-      name: "GitHub",
-      url: "https://github.com",
-      icon: <Github size={18} />,
+      name: "Twitch",
+      url: "https://www.twitch.tv/imenjayy",
+      icon: <SiTwitch size={18} />,
+      color: "text-[#9146FF]"
     },
   ];
 
@@ -30,9 +52,9 @@ const Footer = () => {
   ];
 
   const resourceLinks = [
-    { name: "Join Stake.com", url: "https://stake.com", isExternal: true },
-    { name: "VIP Benefits", url: "https://stake.com/vip", isExternal: true },
-    { name: "Support", url: "https://help.stake.com", isExternal: true },
+    { name: "Join Stake.com", url: "https://stake.com/?c=penny", isExternal: true },
+    { name: "Discord Support", url: "https://discord.gg/enjayy", isExternal: true, icon: <SiDiscord size={14} className="mr-1 text-[#5865F2]" /> },
+    { name: "Kick Channel", url: "http://kick.com/enjayy", isExternal: true, icon: <SiKick size={14} className="mr-1 text-[#53fc18]" /> },
   ];
 
   return (
@@ -51,14 +73,14 @@ const Footer = () => {
             <p className="text-gray-400 mb-4">
               Use code PENNY on Stake.com to unlock exclusive rewards, including monthly leaderboards and stream giveaways.
             </p>
-            <div className="flex space-x-3">
+            <div className="flex flex-wrap gap-3">
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-sky-900/30 flex items-center justify-center text-sky-400 hover:bg-sky-800/50 transition"
+                  className={`w-9 h-9 rounded-full bg-slate-900/50 flex items-center justify-center ${link.color} hover:bg-slate-800/70 transition`}
                   aria-label={link.name}
                 >
                   {link.icon}

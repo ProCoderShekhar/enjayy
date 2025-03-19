@@ -34,7 +34,7 @@ const StreamRewards = () => {
                 icon={<Calendar className="text-sky-400" size={24} />}
                 description="Join us every Friday at 7PM EST for live giveaways, gambling sessions, and exclusive rewards."
                 buttonText="Subscribe"
-                buttonLink="https://www.twitch.tv/"
+                buttonLink="https://www.twitch.tv/imenjayy"
                 delay={0.1}
               />
               <StreamInfoCard 
@@ -95,8 +95,8 @@ const StreamRewards = () => {
           </div>
         </section>
 
-        {/* Stream Rewards Details */}
-        <section className="py-20 bg-gradient-to-b from-black/10 to-black/40" id="stream-rewards-details">
+        {/* Connect Section */}
+        <section className="py-20 bg-gradient-to-b from-black/10 to-black/40" id="connect-section">
           <div className="container mx-auto px-4">
             <motion.div
               className="text-center mb-16"
@@ -106,47 +106,106 @@ const StreamRewards = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                <span className="text-white">Stream Giveaway </span>
-                <span className="text-sky-400">Details</span>
+                <span className="text-white">Connect With </span>
+                <span className="text-sky-400">Us</span>
               </h2>
               <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                Over $1,500 in weekly giveaways distributed across multiple categories. Here's what you can win:
+                Follow our channels for stream announcements, giveaways, and rewards.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
-              <GiveawayCard
-                title="Main Giveaway"
-                icon={<Trophy size={24} />}
-                amount="$500"
-                description="Grand prize awarded to one lucky winner at the end of each stream."
-                timeInfo="Last 15 minutes of stream"
-                delay={0.1}
-              />
-              <GiveawayCard
-                title="Hourly Prizes"
-                icon={<Clock size={24} />}
-                amount="$50-100"
-                description="Random giveaways every hour during the stream for active participants."
-                timeInfo="Every hour on the hour"
-                delay={0.2}
-              />
-              <GiveawayCard
-                title="Bonus Rounds"
-                icon={<Flame size={24} />}
-                amount="$25-50"
-                description="Special bonus giveaways triggered when hitting gambling milestones."
-                timeInfo="Randomly throughout stream"
-                delay={0.3}
-              />
-              <GiveawayCard
-                title="Loyalty Rewards"
-                icon={<Award size={24} />}
-                amount="$25-250"
-                description="Extra rewards for consistent participants who attend multiple streams."
-                timeInfo="Beginning of each stream"
-                delay={0.4}
-              />
+            <div className="max-w-4xl mx-auto bg-slate-900/50 border border-sky-900/30 rounded-xl p-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-semibold text-white mb-4">Social Channels</h3>
+                  
+                  <div className="space-y-3 text-gray-300">
+                    <a href="http://kick.com/enjayy" target="_blank" rel="noopener noreferrer" 
+                      className="flex items-center gap-3 p-3 bg-black/30 hover:bg-black/50 rounded-lg transition">
+                      <div className="w-10 h-10 rounded-full bg-[#53fc18]/20 flex items-center justify-center text-[#53fc18]">
+                        K
+                      </div>
+                      <div>
+                        <div className="font-medium">Kick</div>
+                        <div className="text-sm text-gray-400">kick.com/enjayy</div>
+                      </div>
+                    </a>
+                    
+                    <a href="https://discord.gg/enjayy" target="_blank" rel="noopener noreferrer" 
+                      className="flex items-center gap-3 p-3 bg-black/30 hover:bg-black/50 rounded-lg transition">
+                      <div className="w-10 h-10 rounded-full bg-[#5865F2]/20 flex items-center justify-center text-[#5865F2]">
+                        D
+                      </div>
+                      <div>
+                        <div className="font-medium">Discord</div>
+                        <div className="text-sm text-gray-400">discord.gg/enjayy</div>
+                      </div>
+                    </a>
+                    
+                    <a href="https://www.youtube.com/@EnjayyLive" target="_blank" rel="noopener noreferrer" 
+                      className="flex items-center gap-3 p-3 bg-black/30 hover:bg-black/50 rounded-lg transition">
+                      <div className="w-10 h-10 rounded-full bg-[#FF0000]/20 flex items-center justify-center text-[#FF0000]">
+                        Y
+                      </div>
+                      <div>
+                        <div className="font-medium">YouTube</div>
+                        <div className="text-sm text-gray-400">@EnjayyLive (Backup Channel)</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-semibold text-white mb-4">More Platforms</h3>
+                  
+                  <div className="space-y-3 text-gray-300">
+                    <a href="https://x.com/imEnjayy" target="_blank" rel="noopener noreferrer" 
+                      className="flex items-center gap-3 p-3 bg-black/30 hover:bg-black/50 rounded-lg transition">
+                      <div className="w-10 h-10 rounded-full bg-[#1DA1F2]/20 flex items-center justify-center text-[#1DA1F2]">
+                        X
+                      </div>
+                      <div>
+                        <div className="font-medium">X (Twitter)</div>
+                        <div className="text-sm text-gray-400">@imEnjayy</div>
+                      </div>
+                    </a>
+                    
+                    <a href="https://instagram.com/imenjayy" target="_blank" rel="noopener noreferrer" 
+                      className="flex items-center gap-3 p-3 bg-black/30 hover:bg-black/50 rounded-lg transition">
+                      <div className="w-10 h-10 rounded-full bg-[#E4405F]/20 flex items-center justify-center text-[#E4405F]">
+                        I
+                      </div>
+                      <div>
+                        <div className="font-medium">Instagram</div>
+                        <div className="text-sm text-gray-400">@imenjayy</div>
+                      </div>
+                    </a>
+                    
+                    <a href="https://www.twitch.tv/imenjayy" target="_blank" rel="noopener noreferrer" 
+                      className="flex items-center gap-3 p-3 bg-black/30 hover:bg-black/50 rounded-lg transition">
+                      <div className="w-10 h-10 rounded-full bg-[#9146FF]/20 flex items-center justify-center text-[#9146FF]">
+                        T
+                      </div>
+                      <div>
+                        <div className="font-medium">Twitch</div>
+                        <div className="text-sm text-gray-400">imenjayy</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-8 p-4 bg-sky-950/30 rounded-lg border border-sky-900/30">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-sky-500/20 flex items-center justify-center text-sky-500">
+                    ?
+                  </div>
+                  <div>
+                    <div className="font-medium">Need Support?</div>
+                    <div className="text-sm text-gray-400">Join our <a href="https://discord.gg/enjayy" className="text-sky-400 hover:underline">Discord</a> for fastest support and answers to your questions.</div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <motion.div 
@@ -157,7 +216,7 @@ const StreamRewards = () => {
               viewport={{ once: true }}
             >
               <a
-                href="https://www.twitch.tv/"
+                href="https://www.twitch.tv/imenjayy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 text-white font-medium hover:opacity-90 transition"
