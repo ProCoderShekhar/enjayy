@@ -102,6 +102,12 @@ export function getLeaderboardData(): LeaderboardEntry[] {
   }));
 }
 
+// Get leaderboard data excluding the top 3 entries (for the table display)
+export function getLeaderboardDataExcludingTop3(): LeaderboardEntry[] {
+  const allEntries = getLeaderboardData();
+  return allEntries.filter(entry => entry.rank > 3);
+}
+
 // Get the top 3 entries for the featured display
 export function getTopThreeEntries(): LeaderboardEntry[] {
   const allEntries = getLeaderboardData();

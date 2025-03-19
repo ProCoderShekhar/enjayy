@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { Trophy, Crown, Medal } from "lucide-react";
+import { Trophy, Crown, Medal, MessageCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { getLeaderboardData, getTopThreeEntries, LeaderboardEntry } from "@/data/leaderboard-data";
+import { getLeaderboardDataExcludingTop3, getTopThreeEntries, LeaderboardEntry } from "@/data/leaderboard-data";
 
 const Leaderboard = () => {
-  const leaderboardData = getLeaderboardData();
+  const leaderboardData = getLeaderboardDataExcludingTop3();
   const topThree = getTopThreeEntries();
   
   return (
@@ -248,10 +248,47 @@ const Leaderboard = () => {
                   </div>
 
                   <div>
-                    <h4 className="text-sky-400 font-semibold mb-2">Payout Schedule</h4>
-                    <p className="text-gray-300 text-sm">
-                      Rewards are distributed within 48 hours after the end of each month.
+                    <h4 className="text-sky-400 font-semibold mb-2">Support</h4>
+                    <p className="text-gray-300 text-sm flex items-center gap-1.5">
+                      <MessageCircle size={14} className="text-sky-400" />
+                      Join our <a href="https://discord.gg/enjayy" target="_blank" rel="noopener noreferrer" className="text-sky-400 underline hover:text-sky-300">Discord</a> for support
                     </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-sky-400 font-semibold mb-2">Social Media</h4>
+                    <ul className="space-y-1.5 text-sm">
+                      <li>
+                        <a href="http://kick.com/enjayy" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-sky-400 inline-flex items-center gap-1.5">
+                          <span className="w-14 inline-block">Kick:</span> kick.com/enjayy
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://discord.gg/enjayy" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-sky-400 inline-flex items-center gap-1.5">
+                          <span className="w-14 inline-block">Discord:</span> discord.gg/enjayy
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.youtube.com/@EnjayyLive" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-sky-400 inline-flex items-center gap-1.5">
+                          <span className="w-14 inline-block">YouTube:</span> @EnjayyLive
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://x.com/imEnjayy" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-sky-400 inline-flex items-center gap-1.5">
+                          <span className="w-14 inline-block">X:</span> @imEnjayy
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://instagram.com/imenjayy" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-sky-400 inline-flex items-center gap-1.5">
+                          <span className="w-14 inline-block">Instagram:</span> @imenjayy
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://www.twitch.tv/imenjayy" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-sky-400 inline-flex items-center gap-1.5">
+                          <span className="w-14 inline-block">Twitch:</span> imenjayy
+                        </a>
+                      </li>
+                    </ul>
                   </div>
 
                   <div className="pt-4">
@@ -261,7 +298,7 @@ const Leaderboard = () => {
                       rel="noopener noreferrer"
                       className="block w-full py-3 rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 text-white text-center font-medium hover:opacity-90 transition"
                     >
-                      Join Leaderboard
+                      Join Stake with code PENNY
                     </a>
                   </div>
                 </div>
