@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Switch, Route } from "wouter";
 
 import Home from "@/pages/Home";
+import Leaderboard from "@/pages/Leaderboard";
+import StreamRewards from "@/pages/StreamRewards";
 import NotFound from "@/pages/not-found";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -21,6 +23,8 @@ function App() {
     <>
       <Switch>
         <Route path="/" component={Home} />
+        <Route path="/leaderboard" component={Leaderboard} />
+        <Route path="/stream-rewards" component={StreamRewards} />
         <Route component={NotFound} />
       </Switch>
       {showScrollToTop && <ScrollToTop />}

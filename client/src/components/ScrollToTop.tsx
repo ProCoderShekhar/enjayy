@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ChevronUp } from "lucide-react";
 
 const ScrollToTop = () => {
   const scrollToTop = () => {
@@ -10,15 +11,15 @@ const ScrollToTop = () => {
 
   return (
     <motion.button
-      className="fixed bottom-6 right-6 z-20 bg-secondary text-dark h-12 w-12 rounded-full shadow-lg flex items-center justify-center text-lg md:hidden"
-      onClick={scrollToTop}
-      initial={{ opacity: 0, scale: 0.5 }}
+      initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.5 }}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
+      exit={{ opacity: 0, scale: 0.8 }}
+      transition={{ duration: 0.3 }}
+      onClick={scrollToTop}
+      className="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-sky-600 text-white shadow-lg flex items-center justify-center hover:bg-sky-500 transition-colors"
+      aria-label="Scroll to top"
     >
-      <i className="fas fa-arrow-up"></i>
+      <ChevronUp size={24} />
     </motion.button>
   );
 };
