@@ -31,13 +31,13 @@ const Header = () => {
       >
         <div className="container mx-auto px-4 flex justify-between items-center">
           {/* Logo */}
-          <Link href="/">
-            <a className="flex items-center">
-              <span className="text-2xl font-bold bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent">
+          <div className="flex items-center">
+            <Link href="/">
+              <span className="text-2xl font-bold bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent cursor-pointer">
                 PennyPTS
               </span>
-            </a>
-          </Link>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-1">
@@ -53,12 +53,12 @@ const Header = () => {
               isActive={location === "/stream-rewards"}
             />
             <a
-              href="https://stake.com"
+              href="https://stake.com/?c=penny"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-4 py-2 rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 text-white text-sm font-medium hover:opacity-90 transition"
             >
-              Join Now
+              Join with PENNY
               <ChevronRight size={16} className="ml-1" />
             </a>
           </nav>
@@ -93,16 +93,16 @@ interface NavLinkProps {
 const NavLink = ({ href, label, isActive }: NavLinkProps) => {
   return (
     <Link href={href}>
-      <a
+      <div
         className={cn(
-          "inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-colors",
+          "inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer",
           isActive
             ? "bg-sky-900/30 text-sky-400"
             : "text-gray-300 hover:bg-sky-900/20 hover:text-white"
         )}
       >
         {label}
-      </a>
+      </div>
     </Link>
   );
 };

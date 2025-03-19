@@ -72,13 +72,13 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
               variants={linkVariants}
             >
               <Link href={link.href}>
-                <a
+                <div
                   onClick={onClose}
-                  className="flex items-center p-3 rounded-lg text-gray-300 hover:bg-sky-900/30 hover:text-sky-400 transition"
+                  className="flex items-center p-3 rounded-lg text-gray-300 hover:bg-sky-900/30 hover:text-sky-400 transition cursor-pointer"
                 >
                   <span className="mr-3">{link.icon}</span>
                   <span className="font-medium">{link.label}</span>
-                </a>
+                </div>
               </Link>
             </motion.div>
           ))}
@@ -92,12 +92,12 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             className="pt-4 mt-4 border-t border-sky-900/30"
           >
             <a
-              href="https://stake.com"
+              href="https://stake.com/?c=penny"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 p-3 rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 text-white font-medium hover:opacity-90 transition"
             >
-              Join Stake.com
+              Join Stake with PENNY
               <ChevronRight size={18} />
             </a>
           </motion.div>
