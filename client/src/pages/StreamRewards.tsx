@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { ChevronRight, Gift, Trophy, Users, Star, Flame, Calendar, Clock, Award } from "lucide-react";
+import { ChevronRight, Gift, Trophy, Users, Star, Flame, Calendar, Clock, Award, Sparkles } from "lucide-react";
 import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import StreamMultiRewards from "@/components/StreamMultiRewards";
 
 const StreamRewards = () => {
   return (
@@ -56,8 +57,46 @@ const StreamRewards = () => {
           </div>
         </section>
 
+        {/* High Multi Chase Rewards Section */}
+        <section className="py-20 bg-black/30" id="high-multi-rewards">
+          <div className="container mx-auto px-4">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                <span className="text-white">High Multi Chase </span>
+                <span className="text-sky-400">Rewards</span>
+              </h2>
+              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+                Hit these multipliers in your bets during streams to win special prizes. Code users receive premium rewards.
+              </p>
+            </motion.div>
+
+            <div className="max-w-5xl mx-auto mb-10">
+              <StreamMultiRewards />
+            </div>
+            
+            <motion.div 
+              className="text-center mt-8"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center text-gray-400 bg-black/40 rounded-full px-4 py-2">
+                <Sparkles size={16} className="text-amber-400 mr-2" />
+                <span className="text-sm">PENNY code users receive higher rewards for the same multipliers</span>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Stream Rewards Details */}
-        <section className="py-20 bg-black/30" id="stream-rewards-details">
+        <section className="py-20 bg-gradient-to-b from-black/10 to-black/40" id="stream-rewards-details">
           <div className="container mx-auto px-4">
             <motion.div
               className="text-center mb-16"
