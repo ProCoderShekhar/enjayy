@@ -1,17 +1,63 @@
 import { motion } from "framer-motion";
-import { ChevronRight, Award, Trophy, Gift, CheckCircle2 } from "lucide-react";
+import { ChevronRight, Award, Trophy, Gift, CheckCircle2, TrendingUp, Users, Sparkles, Zap } from "lucide-react";
 import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [count1, setCount1] = useState(0);
+  const [count2, setCount2] = useState(0);
+  const [count3, setCount3] = useState(0);
+  const [count4, setCount4] = useState(0);
+
+  const targetCounts = {
+    count1: 22500,
+    count2: 450,
+    count3: 12,
+    count4: 98
+  };
+
+  useEffect(() => {
+    const duration = 2000; // ms
+    const frameDuration = 1000 / 60; // 60fps
+    const totalFrames = Math.round(duration / frameDuration);
+    
+    let frame = 0;
+    const counter = setInterval(() => {
+      frame++;
+      const progress = frame / totalFrames;
+      
+      setCount1(Math.floor(progress * targetCounts.count1));
+      setCount2(Math.floor(progress * targetCounts.count2));
+      setCount3(Math.floor(progress * targetCounts.count3));
+      setCount4(Math.floor(progress * targetCounts.count4));
+      
+      if (frame === totalFrames) {
+        clearInterval(counter);
+        setCount1(targetCounts.count1);
+        setCount2(targetCounts.count2);
+        setCount3(targetCounts.count3);
+        setCount4(targetCounts.count4);
+      }
+    }, frameDuration);
+
+    return () => clearInterval(counter);
+  }, []);
+
   return (
     <>
       <Header />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="bg-gradient-to-b from-slate-900 to-black pt-28 pb-20">
-          <div className="container mx-auto px-4">
+        <section className="pt-32 pb-20 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+            <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-purple-600/20 rounded-full filter blur-[80px]"></div>
+            <div className="absolute bottom-[-5%] left-[-10%] w-[50%] h-[50%] bg-blue-600/20 rounded-full filter blur-[100px]"></div>
+            <div className="absolute top-[20%] left-[30%] w-[30%] h-[30%] bg-pink-600/10 rounded-full filter blur-[80px]"></div>
+          </div>
+          
+          <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
               <motion.div 
                 className="lg:w-1/2"
@@ -19,27 +65,27 @@ const Home = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
                   <span className="text-white">Unlock Exclusive </span>
-                  <span className="text-sky-400">Rewards</span>
+                  <span className="gradient-text">Rewards</span>
                 </h1>
                 <p className="text-xl text-gray-300 mb-8">
-                  Use code <span className="font-bold text-sky-400">PENNY</span> on Stake.com to access $22,500+ in rewards, monthly leaderboards, and VIP benefits.
+                  Use code <span className="font-bold gradient-text">PENNY</span> on Stake.com to access <span className="text-white font-semibold">${count1.toLocaleString()}+</span> in rewards, monthly leaderboards, and VIP benefits.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-5">
                   <a
-                    href="https://stake.com"
+                    href="https://stake.com/?c=penny"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 text-white font-medium hover:opacity-90 transition"
+                    className="gradient-button inline-flex items-center justify-center px-8 py-4 rounded-lg text-white font-bold shadow-lg shadow-purple-500/20"
                   >
                     Join Now
-                    <ChevronRight size={18} className="ml-1" />
+                    <ChevronRight size={20} className="ml-2" />
                   </a>
                   <Link href="/leaderboard">
-                    <a className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white/10 text-white font-medium hover:bg-white/15 transition">
+                    <div className="glass-button inline-flex items-center justify-center px-8 py-4 rounded-lg text-white font-bold cursor-pointer">
                       View Leaderboard
-                    </a>
+                    </div>
                   </Link>
                 </div>
               </motion.div>
@@ -48,56 +94,148 @@ const Home = () => {
                 className="lg:w-1/2"
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <div className="rounded-xl overflow-hidden border border-sky-900/30 bg-black/30 shadow-xl">
-                  <div className="p-6 border-b border-sky-900/20 bg-black/50">
-                    <h3 className="text-xl font-semibold flex items-center">
-                      <Award className="text-sky-400 mr-2" size={24} />
-                      Monthly Reward Highlights
-                    </h3>
-                  </div>
-                  <div className="p-6 space-y-5">
-                    <RewardItem 
-                      icon={<Trophy className="text-amber-400" size={22} />}
-                      title="$320+ Monthly Leaderboard"
-                      description="Top 10 rankings with guaranteed prizes. Rewards grow as total wager increases."
-                    />
-                    <RewardItem 
-                      icon={<Gift className="text-rose-400" size={22} />}
-                      title="Stream Giveaways"
-                      description="$1,500+ in weekly stream giveaways with chance to win up to $500 per stream."
-                    />
-                    <RewardItem 
-                      icon={<CheckCircle2 className="text-emerald-400" size={22} />}
-                      title="VIP Benefits"
-                      description="Earn up to $22,500 in rank-up bonuses plus weekly and monthly boost rewards."
-                    />
-                  </div>
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-blue-500/30 blur-3xl opacity-20 rounded-full"></div>
+                  <motion.div 
+                    className="gradient-border glass-card p-6 md:p-8 rounded-2xl"
+                    whileHover={{ y: -5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="flex justify-between items-center mb-8">
+                      <div className="flex items-center">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-blue-600 flex items-center justify-center">
+                          <Sparkles className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="ml-4">
+                          <h3 className="text-lg font-bold">PENNY Rewards</h3>
+                          <p className="text-gray-400 text-sm">VIP Program</p>
+                        </div>
+                      </div>
+                      <div className="bg-white/10 px-3 py-1 rounded-full">
+                        <span className="text-xs font-medium">Active</span>
+                      </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-4 mb-6">
+                      <div className="glass-card rounded-xl p-4">
+                        <p className="text-gray-400 text-sm mb-1">Monthly Prizes</p>
+                        <p className="text-2xl font-bold gradient-text">$22,500+</p>
+                      </div>
+                      <div className="glass-card rounded-xl p-4">
+                        <p className="text-gray-400 text-sm mb-1">Active Players</p>
+                        <p className="text-2xl font-bold gradient-text">{count2}+</p>
+                      </div>
+                    </div>
+                    
+                    <div className="glass-card rounded-xl p-4 mb-6">
+                      <div className="flex justify-between items-center mb-2">
+                        <p className="text-gray-400 text-sm">Monthly Progress</p>
+                        <p className="text-white text-xs font-medium">75%</p>
+                      </div>
+                      <div className="w-full h-2 bg-white/5 rounded-full">
+                        <div className="h-full w-3/4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center justify-between">
+                      <p className="text-gray-400 text-sm">Next reward drop in <span className="text-white">2 days</span></p>
+                      <motion.div 
+                        className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center"
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                      >
+                        <TrendingUp className="w-5 h-5 text-purple-400" />
+                      </motion.div>
+                    </div>
+                  </motion.div>
                 </div>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="py-20 bg-gradient-to-b from-black to-slate-950">
+        {/* Stats Section */}
+        <section className="py-16 relative">
           <div className="container mx-auto px-4">
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                <span className="text-white">Why Choose Code </span>
-                <span className="text-sky-400">PENNY</span>
+            <div className="glass-card p-6 md:p-10 rounded-2xl mb-16">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
+                <motion.div
+                  className="text-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Gift className="w-8 h-8 text-purple-400" />
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-2 gradient-text">${count1.toLocaleString()}+</h3>
+                  <p className="text-gray-400">Monthly Rewards</p>
+                </motion.div>
+                
+                <motion.div
+                  className="text-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Users className="w-8 h-8 text-blue-400" />
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-2 gradient-text">{count2}+</h3>
+                  <p className="text-gray-400">Active Players</p>
+                </motion.div>
+                
+                <motion.div
+                  className="text-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="w-16 h-16 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Trophy className="w-8 h-8 text-pink-400" />
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-2 gradient-text">{count3}</h3>
+                  <p className="text-gray-400">Monthly Giveaways</p>
+                </motion.div>
+                
+                <motion.div
+                  className="text-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="w-16 h-16 bg-indigo-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Zap className="w-8 h-8 text-indigo-400" />
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-bold mb-2 gradient-text">{count4}%</h3>
+                  <p className="text-gray-400">Satisfaction Rate</p>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Benefits Section */}
+        <section className="py-20 relative">
+          <div className="absolute top-[-20%] right-[-10%] w-[40%] h-[40%] bg-purple-600/10 rounded-full filter blur-[120px]"></div>
+          <div className="absolute bottom-[-10%] left-[-5%] w-[30%] h-[30%] bg-blue-600/10 rounded-full filter blur-[100px]"></div>
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                <span className="text-white">Why Use Code </span>
+                <span className="gradient-text">PENNY</span>
               </h2>
-              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                Maximize your gambling experience with exclusive benefits designed to reward loyal players.
+              <p className="text-lg text-gray-300">
+                Experience premium benefits and exclusive rewards when you play on Stake.com using our code.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <BenefitCard
