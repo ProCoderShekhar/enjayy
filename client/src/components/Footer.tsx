@@ -100,10 +100,8 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.url}>
-                    <a className="text-gray-400 hover:text-sky-400 transition">
-                      {link.name}
-                    </a>
+                  <Link href={link.url} className="text-gray-400 hover:text-sky-400 transition">
+                    {link.name}
                   </Link>
                 </li>
               ))}
@@ -132,10 +130,8 @@ const Footer = () => {
                       <ExternalLink size={14} className="ml-1 opacity-70" />
                     </a>
                   ) : (
-                    <Link href={link.url}>
-                      <a className="text-gray-400 hover:text-sky-400 transition">
-                        {link.name}
-                      </a>
+                    <Link href={link.url} className="text-gray-400 hover:text-sky-400 transition">
+                      {link.name}
                     </Link>
                   )}
                 </li>
@@ -149,8 +145,20 @@ const Footer = () => {
           <div className="text-gray-500 text-sm mb-4 md:mb-0">
             &copy; {currentYear} PennyPTS. All rights reserved.
           </div>
-          <div className="text-gray-500 text-sm">
-            <span className="text-sky-400 font-medium">PENNY</span> - Exclusive Gambling Code on Stake.com
+          <div className="flex flex-col items-center md:items-end gap-2">
+            <div className="text-gray-500 text-sm">
+              <span className="text-sky-400 font-medium">PENNY</span> - Exclusive Gambling Code on Stake.com
+            </div>
+            <a 
+              href="https://discord.gg/YGVXDwNrJU" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-sm group transition-all duration-300 hover:scale-105"
+            >
+              <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent font-medium group-hover:from-purple-500 group-hover:to-pink-500">
+                Made with 💗 by Nobita
+              </span>
+            </a>
           </div>
         </div>
       </div>
