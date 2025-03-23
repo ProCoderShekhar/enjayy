@@ -109,7 +109,7 @@ const Home = () => {
                           <Sparkles className="w-6 h-6 text-white" />
                         </div>
                         <div className="ml-4">
-                          <h3 className="text-lg font-bold">PENNY Rewards</h3>
+                          <h3 className="text-lg font-bold">PennyPayouts</h3>
                           <p className="text-gray-400 text-sm">VIP Program</p>
                         </div>
                       </div>
@@ -121,11 +121,11 @@ const Home = () => {
                     <div className="grid grid-cols-2 gap-4 mb-6">
                       <div className="glass-card rounded-xl p-4">
                         <p className="text-gray-400 text-sm mb-1">Monthly Prizes</p>
-                        <p className="text-2xl font-bold gradient-text">$22,500+</p>
+                        <p className="text-2xl font-bold gradient-text">$1,000+</p>
                       </div>
                       <div className="glass-card rounded-xl p-4">
-                        <p className="text-gray-400 text-sm mb-1">Active Players</p>
-                        <p className="text-2xl font-bold gradient-text">{count2}+</p>
+                        <p className="text-gray-400 text-sm mb-1">Community Members</p>
+                        <p className="text-2xl font-bold gradient-text">2,000+</p>
                       </div>
                     </div>
                     
@@ -140,7 +140,7 @@ const Home = () => {
                     </div>
                     
                     <div className="flex items-center justify-between">
-                      <p className="text-gray-400 text-sm">Next reward drop in <span className="text-white">2 days</span></p>
+                      <p className="text-gray-400 text-sm">Next reward drop at <span className="text-white">end of month</span></p>
                       <motion.div 
                         className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center"
                         animate={{ rotate: 360 }}
@@ -186,7 +186,7 @@ const Home = () => {
                     <Users className="w-8 h-8 text-blue-400" />
                   </div>
                   <h3 className="text-3xl md:text-4xl font-bold mb-2 gradient-text">{count2}+</h3>
-                  <p className="text-gray-400">Active Players</p>
+                  <p className="text-gray-400">Community Members</p>
                 </motion.div>
                 
                 <motion.div
@@ -246,13 +246,13 @@ const Home = () => {
               <BenefitCard
                 icon={<Trophy className="w-8 h-8 text-blue-400" />}
                 title="Leaderboard"
-                description="Monthly leaderboard with $320+ in guaranteed prizes for top players."
+                description="Monthly leaderboard with $320+ in base prizes for top players."
                 delay={0.1}
               />
               <BenefitCard
                 icon={<Gift className="w-8 h-8 text-pink-400" />}
                 title="Giveaways"
-                description="Join weekly streams with $1,500+ in prizes and multiple winners."
+                description="Join daily streams for chances to win stream rewards."
                 delay={0.2}
               />
               <BenefitCard
@@ -298,7 +298,7 @@ const Home = () => {
                 <span className="gradient-text">Leaderboard</span>
               </h2>
               <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                Compete with other players for a share of $320+ in monthly rewards. Top 10 spots receive guaranteed prizes.
+                Compete with other players for a share of $320+ in monthly rewards. Top 10 spots receive base prizes.
               </p>
             </motion.div>
 
