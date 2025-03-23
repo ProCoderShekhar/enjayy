@@ -252,7 +252,7 @@ const Home = () => {
               <BenefitCard
                 icon={<Gift className="w-8 h-8 text-pink-400" />}
                 title="Giveaways"
-                description="Join daily streams for chances to win stream rewards."
+                description={<>Join daily streams for chances to win <Link href="/stream-rewards"><span className="text-sky-400 hover:underline cursor-pointer">stream rewards</span></Link>.</>}
                 delay={0.2}
               />
               <BenefitCard
@@ -452,7 +452,7 @@ const RewardItem = ({ icon, title, description }: RewardItemProps) => {
 interface BenefitCardProps {
   icon: React.ReactNode;
   title: string;
-  description: string;
+  description: React.ReactNode;
   delay?: number;
 }
 

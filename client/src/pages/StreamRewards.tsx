@@ -24,15 +24,15 @@ const StreamRewards = () => {
                 <span className="text-sky-400">Rewards</span>
               </h1>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Join our weekly live streams for exclusive giveaways and rewards available only to PENNY code users.
+                Join our daily live streams for exclusive giveaways and rewards over 70% boosted for code PENNY users.
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <StreamInfoCard 
-                title="Weekly Streams"
+                title="Daily Streams"
                 icon={<Calendar className="text-sky-400" size={24} />}
-                description="Join us every Friday at 7PM EST for live giveaways, gambling sessions, and exclusive rewards."
+                description="Join us daily for live giveaways, gambling sessions, and exclusive rewards. Check schedule for exact times."
                 buttonText="Subscribe"
                 buttonLink="https://www.twitch.tv/imenjayy"
                 delay={0.1}
@@ -68,11 +68,11 @@ const StreamRewards = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                <span className="text-white">High Multi Chase </span>
-                <span className="text-sky-400">Rewards</span>
+                <span className="text-white">Mines Multiplier </span>
+                <span className="text-sky-400">Hunt</span>
               </h2>
               <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                Hit these multipliers in your bets during streams to win special prizes. Code users receive premium rewards.
+                The Hunt to Hit EVERY Mines Multiplier on Stake! Every Hit on Stream will Result in Rewards for the Chat.
               </p>
             </motion.div>
 
@@ -215,15 +215,32 @@ const StreamRewards = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
             >
-              <a
-                href="https://www.twitch.tv/imenjayy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 text-white font-medium hover:opacity-90 transition"
-              >
-                Join Next Stream
-                <ChevronRight size={18} className="ml-1" />
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://www.twitch.tv/imenjayy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-purple-700 text-white font-medium hover:opacity-90 transition"
+                >
+                  <div className="w-5 h-5 mr-2 flex items-center justify-center text-white">
+                    T
+                  </div>
+                  Join on Twitch
+                  <ChevronRight size={18} className="ml-1" />
+                </a>
+                <a
+                  href="http://kick.com/enjayy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-green-500 to-green-700 text-white font-medium hover:opacity-90 transition"
+                >
+                  <div className="w-5 h-5 mr-2 flex items-center justify-center text-white">
+                    K
+                  </div>
+                  Join on Kick
+                  <ChevronRight size={18} className="ml-1" />
+                </a>
+              </div>
             </motion.div>
           </div>
         </section>

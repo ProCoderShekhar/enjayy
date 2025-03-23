@@ -255,41 +255,7 @@ const Leaderboard = () => {
                     </p>
                   </div>
 
-                  <div>
-                    <h4 className="text-sky-400 font-semibold mb-2">Social Media</h4>
-                    <ul className="space-y-1.5 text-sm">
-                      <li>
-                        <a href="http://kick.com/enjayy" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-sky-400 inline-flex items-center gap-1.5">
-                          <span className="w-14 inline-block">Kick:</span> kick.com/enjayy
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://discord.gg/enjayy" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-sky-400 inline-flex items-center gap-1.5">
-                          <span className="w-14 inline-block">Discord:</span> discord.gg/enjayy
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://www.youtube.com/@EnjayyLive" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-sky-400 inline-flex items-center gap-1.5">
-                          <span className="w-14 inline-block">YouTube:</span> @EnjayyLive
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://x.com/imEnjayy" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-sky-400 inline-flex items-center gap-1.5">
-                          <span className="w-14 inline-block">X:</span> @imEnjayy
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://instagram.com/imenjayy" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-sky-400 inline-flex items-center gap-1.5">
-                          <span className="w-14 inline-block">Instagram:</span> @imenjayy
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://www.twitch.tv/imenjayy" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-sky-400 inline-flex items-center gap-1.5">
-                          <span className="w-14 inline-block">Twitch:</span> imenjayy
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+
 
                   <div className="pt-4">
                     <a 
