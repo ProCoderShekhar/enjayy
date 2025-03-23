@@ -255,8 +255,6 @@ const Leaderboard = () => {
                     </p>
                   </div>
 
-
-
                   <div className="pt-4">
                     <a 
                       href="https://stake.com/?c=penny"
