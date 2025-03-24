@@ -50,7 +50,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
         {/* Close button */}
         <div className="flex justify-between items-center p-4 border-b border-sky-900/30">
           <span className="text-xl font-bold bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent">
-            PennyPTS
+            PennyPayouts
           </span>
           <button
             onClick={onClose}

@@ -70,7 +70,7 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-bold mb-4 text-white">PennyPTS</h3>
+            <h3 className="text-xl font-bold mb-4 text-white">PennyPayouts</h3>
             <p className="text-gray-400 mb-4">
               Use code PENNY on Stake.com to unlock exclusive rewards, including monthly leaderboards and stream giveaways.
             </p>
@@ -144,7 +144,7 @@ const Footer = () => {
         {/* Bottom section */}
         <div className="border-t border-sky-900/20 pt-6 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-500 text-sm mb-4 md:mb-0">
-            &copy; {currentYear} PennyPTS. All rights reserved.
+            &copy; {currentYear} PennyPayouts. All rights reserved.
           </div>
           <div className="flex flex-col items-center md:items-end gap-2">
             <div className="text-gray-500 text-sm">
