@@ -49,6 +49,7 @@ const Footer = () => {
     { name: "Home", url: "/" },
     { name: "Leaderboard", url: "/leaderboard" },
     { name: "Stream Rewards", url: "/stream-rewards" },
+    { name: "Rank Rewards", url: "/rank-rewards" },
   ];
 
   const resourceLinks = [

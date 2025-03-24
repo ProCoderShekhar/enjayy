@@ -50,7 +50,7 @@ const StreamRewards = () => {
                 icon={<Star className="text-sky-400" size={24} />}
                 description="Simply use code PENNY, join the stream, and follow instructions to enter giveaways. No purchase necessary."
                 buttonText="Get Started"
-                buttonLink="https://stake.com"
+                buttonLink="https://stake.com/?c=penny"
                 delay={0.3}
               />
             </div>
@@ -343,7 +343,7 @@ const StreamRewards = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="https://stake.com"
+                  href="https://stake.com/?c=penny"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 text-white font-medium hover:opacity-90 transition"

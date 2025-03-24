@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Trophy, Crown, Medal, MessageCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MonthlyTimer from "@/components/MonthlyTimer";
 import { getLeaderboardDataExcludingTop3, getTopThreeEntries, LeaderboardEntry } from "@/data/leaderboard-data";
 
 const Leaderboard = () => {
@@ -129,6 +130,11 @@ const Leaderboard = () => {
             >
               <p>Multi accounting or wager methods will result in loss of reward</p>
             </motion.div>
+            
+            {/* Monthly Timer Component */}
+            <div className="flex justify-center mt-8">
+              <MonthlyTimer />
+            </div>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8 max-w-6xl mx-auto">
@@ -142,9 +148,6 @@ const Leaderboard = () => {
                 <div className="p-6 border-b border-sky-900/20 bg-black/50">
                   <div className="flex justify-between items-center">
                     <h3 className="text-xl font-semibold">Current Monthly Leaderboard</h3>
-                    <div className="text-sm text-gray-400">
-                      <span className="text-sky-400 font-semibold">12</span> days remaining
-                    </div>
                   </div>
                 </div>
 
