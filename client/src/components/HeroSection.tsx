@@ -79,7 +79,7 @@ const HeroSection = () => {
             className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto"
             variants={itemVariants}
           >
-            Access exclusive benefits on Stake.com including $22,500+ in rewards, monthly leaderboards, and daily bonuses.
+            Access exclusive benefits on Stake.com including $1,000+ in rewards, monthly leaderboards, and daily bonuses.
           </motion.p>
 
           <motion.div 
@@ -108,7 +108,7 @@ const HeroSection = () => {
               className="flex flex-col items-center"
               variants={statVariants}
             >
-              <span className="text-3xl font-bold text-secondary">5,000+</span>
+              <span className="text-3xl font-bold text-secondary">2,000+</span>
               <span className="text-gray-400 text-sm">Active Users</span>
             </motion.div>
             <div className="w-px h-10 bg-gray-700"></div>

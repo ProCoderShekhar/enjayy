@@ -32,7 +32,7 @@ const FloatingCTA = () => {
           transition={{ duration: 0.2 }}
         >
           <h3 className="font-semibold mb-2">Use Code: PENNY</h3>
-          <p className="text-sm text-gray-400 mb-3">Unlock $22,500+ in rewards & exclusive benefits!</p>
+          <p className="text-sm text-gray-400 mb-3">Unlock $1,000+ in rewards & exclusive benefits!</p>
           <a 
             href="#signup" 
             className="w-full block bg-secondary hover:bg-secondary/90 text-dark text-center py-2 rounded font-medium text-sm"

@@ -5,8 +5,8 @@ const benefitsData = [
   {
     icon: <Trophy className="text-secondary" size={24} />,
     title: "Rank Up Benefits",
-    description: "24 rank/mini rank up rewards totaling $22,500+ per person as you progress.",
-    value: "$22,500+",
+    description: "24 rank/mini rank up rewards totaling $1,000+ per person as you progress.",
+    value: "$1,000+",
     label: "Total Rewards",
   },
   {
