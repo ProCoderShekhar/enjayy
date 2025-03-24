@@ -1,49 +1,17 @@
 import { motion } from "framer-motion";
-
-const leaderboardData = [
-  {
-    rank: 1,
-    rankStyle: "bg-secondary text-dark",
-    player: "JackpotKing",
-    initial: "J",
-    wager: "$143,250",
-    prize: "$100",
-  },
-  {
-    rank: 2,
-    rankStyle: "bg-gray-600 text-dark",
-    player: "SpinMaster",
-    initial: "S",
-    wager: "$98,750",
-    prize: "$75",
-  },
-  {
-    rank: 3,
-    rankStyle: "bg-[#CD7F32] text-dark",
-    player: "VegasRoller",
-    initial: "V",
-    wager: "$76,320",
-    prize: "$50",
-  },
-  {
-    rank: 4,
-    rankStyle: "bg-gray-800 text-gray-300",
-    player: "LuckySpinner",
-    initial: "L",
-    wager: "$59,450",
-    prize: "$30",
-  },
-  {
-    rank: 5,
-    rankStyle: "bg-gray-800 text-gray-300",
-    player: "BetMaster",
-    initial: "B",
-    wager: "$41,200",
-    prize: "$25",
-  },
-];
+import { getLeaderboardData, LeaderboardEntry } from "@/data/leaderboard-data";
+import MonthlyTimer from "./MonthlyTimer";
 
 const LeaderboardSection = () => {
+  // Get the top 5 entries from the leaderboard data
+  const leaderboardData = getLeaderboardData().slice(0, 5);
+  
+  // Get the current date for display
+  const currentDate = new Date();
+  const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const currentMonth = monthNames[currentDate.getMonth()];
+  const currentYear = currentDate.getFullYear();
+  
   return (
     <section id="leaderboard" className="py-20 bg-gradient-to-b from-dark-purple/20 to-dark">
       <div className="container mx-auto px-4">
@@ -73,9 +41,9 @@ const LeaderboardSection = () => {
             <div className="bg-dark-purple/10 rounded-xl overflow-hidden border border-primary/30">
               <div className="p-6 border-b border-primary/20 bg-primary/10">
                 <div className="flex justify-between items-center">
-                  <h3 className="text-xl font-semibold">April 2023 Leaderboard</h3>
-                  <div className="text-sm text-gray-400">
-                    <span className="text-secondary font-semibold">12</span> days remaining
+                  <h3 className="text-xl font-semibold">{currentMonth} {currentYear} Leaderboard</h3>
+                  <div className="text-right">
+                    <MonthlyTimer />
                   </div>
                 </div>
               </div>
@@ -92,7 +60,7 @@ const LeaderboardSection = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {leaderboardData.map((player, index) => (
+                      {leaderboardData.map((player: LeaderboardEntry, index: number) => (
                         <motion.tr 
                           key={index} 
                           className="border-b border-primary/10"
@@ -114,7 +82,7 @@ const LeaderboardSection = () => {
                               <span>{player.player}</span>
                             </div>
                           </td>
-                          <td className="px-4 py-4 font-medium">{player.wager}</td>
+                          <td className="px-4 py-4 font-medium">{player.wagerFormatted}</td>
                           <td className="px-4 py-4 text-secondary font-semibold">{player.prize}</td>
                         </motion.tr>
                       ))}
@@ -123,9 +91,12 @@ const LeaderboardSection = () => {
                 </div>
 
                 <div className="mt-4 text-center">
-                  <button className="text-sm text-secondary hover:text-secondary/80 font-medium">
+                  <a 
+                    href="/leaderboard" 
+                    className="inline-block text-sm text-secondary hover:text-secondary/80 font-medium"
+                  >
                     View Full Leaderboard
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -173,9 +144,14 @@ const LeaderboardSection = () => {
                 </div>
 
                 <div className="pt-4">
-                  <button className="w-full py-3 rounded-lg bg-secondary text-dark font-medium hover:bg-secondary/90 transition">
+                  <a 
+                    href="https://stake.com/?c=penny" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block w-full py-3 rounded-lg bg-secondary text-dark font-medium hover:bg-secondary/90 transition text-center"
+                  >
                     Join Leaderboard
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
