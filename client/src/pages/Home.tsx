@@ -4,16 +4,23 @@ import { Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
+import { getTopThreeEntries, LeaderboardEntry } from "@/data/leaderboard-data";
 
 const Home = () => {
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(0);
   const [count3, setCount3] = useState(0);
   const [count4, setCount4] = useState(0);
+  const [topThreePlayers, setTopThreePlayers] = useState<LeaderboardEntry[]>([]);
+
+  useEffect(() => {
+    // Get real leaderboard data
+    setTopThreePlayers(getTopThreeEntries());
+  }, []);
 
   const targetCounts = {
-    count1: 22500,
-    count2: 450,
+    count1: 1000,
+    count2: 2000,
     count3: 12,
     count4: 98
   };
@@ -241,7 +248,7 @@ const Home = () => {
               <BenefitCard
                 icon={<Award className="w-8 h-8 text-purple-400" />}
                 title="VIP Rewards"
-                description="Earn up to $22,500 in bonuses as you progress through VIP tiers."
+                description="Earn up to $1,000 in bonuses as you progress through VIP tiers."
               />
               <BenefitCard
                 icon={<Trophy className="w-8 h-8 text-blue-400" />}
@@ -334,33 +341,18 @@ const Home = () => {
                     </thead>
                     <tbody>
                       {/* Top 3 leaderboard entries */}
-                      <LeaderboardRow 
-                        rank={1} 
-                        rankStyle="bg-gradient-to-r from-purple-500 to-blue-500 text-white" 
-                        player="JackpotKing" 
-                        initial="J" 
-                        wager="$143,250" 
-                        prize="$100"
-                        delay={0.1}
-                      />
-                      <LeaderboardRow 
-                        rank={2} 
-                        rankStyle="bg-gradient-to-r from-blue-500 to-indigo-500 text-white" 
-                        player="SpinMaster" 
-                        initial="S" 
-                        wager="$98,750" 
-                        prize="$75"
-                        delay={0.2}
-                      />
-                      <LeaderboardRow 
-                        rank={3} 
-                        rankStyle="bg-gradient-to-r from-pink-500 to-purple-500 text-white" 
-                        player="VegasRoller" 
-                        initial="V" 
-                        wager="$76,320" 
-                        prize="$50"
-                        delay={0.3}
-                      />
+                      {topThreePlayers.map((player, index) => (
+                        <LeaderboardRow 
+                          key={player.rank}
+                          rank={player.rank} 
+                          rankStyle={player.rankStyle}
+                          player={player.player} 
+                          initial={player.initial} 
+                          wager={player.wagerFormatted} 
+                          prize={player.prize}
+                          delay={0.1 * (index + 1)}
+                        />
+                      ))}
                     </tbody>
                   </table>
                 </div>
