@@ -1,29 +1,30 @@
 import { motion } from "framer-motion";
+import { Trophy, Medal, Tv, Gift, ChevronDown } from "lucide-react";
 
 const benefitsData = [
   {
-    icon: "fas fa-trophy",
+    icon: <Trophy className="text-secondary" size={24} />,
     title: "Rank Up Benefits",
     description: "24 rank/mini rank up rewards totaling $22,500+ per person as you progress.",
     value: "$22,500+",
     label: "Total Rewards",
   },
   {
-    icon: "fas fa-medal",
+    icon: <Medal className="text-secondary" size={24} />,
     title: "Monthly Leaderboard",
     description: "Compete for your share of $320+ in monthly prizes for top participants.",
     value: "$320+",
     label: "Monthly Prizes",
   },
   {
-    icon: "fas fa-tv",
+    icon: <Tv className="text-secondary" size={24} />,
     title: "Stream Giveaways",
     description: "Information and access to exclusive stream giveaways and viewer rewards.",
     value: "Exclusive",
     label: "Viewer Rewards",
   },
   {
-    icon: "fas fa-gift",
+    icon: <Gift className="text-secondary" size={24} />,
     title: "Sign Up Bonus",
     description: "Get $1 per day for 7 days with no deposit or wager needed for new users.",
     value: "$7 Total",
@@ -88,13 +89,13 @@ const BenefitsSection = () => {
               whileHover={{ y: -5, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)" }}
             >
               <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center mb-4">
-                <i className={`${benefit.icon} text-2xl text-secondary`}></i>
+                {benefit.icon}
               </div>
               <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
               <p className="text-gray-400 mb-4">{benefit.description}</p>
               <div className="flex items-center text-sm">
                 <span className="text-secondary font-semibold">{benefit.value}</span>
-                <i className="fas fa-arrow-right text-xs mx-2 text-gray-500"></i>
+                <ChevronDown size={14} className="mx-2 text-gray-500 rotate-[-90deg]" />
                 <span className="text-gray-400">{benefit.label}</span>
               </div>
             </motion.div>
@@ -113,7 +114,7 @@ const BenefitsSection = () => {
             className="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 font-medium transition"
           >
             See Detailed Rewards
-            <i className="fas fa-chevron-down"></i>
+            <ChevronDown size={16} />
           </a>
         </motion.div>
       </div>

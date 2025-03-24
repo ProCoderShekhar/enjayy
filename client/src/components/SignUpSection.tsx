@@ -84,7 +84,9 @@ const SignUpSection = () => {
                   </div>
 
                   <a
-                    href="#"
+                    href="https://stake.com/?c=penny"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center bg-secondary hover:bg-secondary/90 text-dark font-bold py-4 px-8 rounded-lg transition transform hover:-translate-y-1 hover:shadow-lg"
                   >
                     Sign Up Now
@@ -129,9 +131,6 @@ const SignUpSection = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <div className="flex flex-col md:flex-row items-center">
-              <div className="mb-6 md:mb-0 md:mr-8">
-                <i className="fab fa-discord text-6xl text-blue-400"></i>
-              </div>
               <div>
                 <h3 className="text-2xl font-bold mb-2">Join Our Community</h3>
                 <p className="text-gray-300 mb-4">
@@ -139,25 +138,28 @@ const SignUpSection = () => {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a
-                    href="#"
-                    className="inline-flex items-center bg-primary/20 hover:bg-primary/30 text-white py-3 px-6 rounded-lg transition"
+                    href="https://discord.gg/enjayy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center bg-[#5865F2]/20 hover:bg-[#5865F2]/30 text-white py-3 px-6 rounded-lg transition"
                   >
-                    <i className="fab fa-discord mr-2"></i>
                     Discord
                   </a>
                   <a
-                    href="#"
-                    className="inline-flex items-center bg-primary/20 hover:bg-primary/30 text-white py-3 px-6 rounded-lg transition"
+                    href="http://kick.com/enjayy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center bg-[#53fc18]/20 hover:bg-[#53fc18]/30 text-white py-3 px-6 rounded-lg transition"
                   >
-                    <i className="fab fa-telegram mr-2"></i>
-                    Telegram
+                    Kick
                   </a>
                   <a
-                    href="#"
-                    className="inline-flex items-center bg-primary/20 hover:bg-primary/30 text-white py-3 px-6 rounded-lg transition"
+                    href="https://x.com/imEnjayy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center bg-slate-700/50 hover:bg-slate-700/70 text-white py-3 px-6 rounded-lg transition"
                   >
-                    <i className="fab fa-twitter mr-2"></i>
-                    Twitter
+                    X (Twitter)
                   </a>
                 </div>
               </div>
