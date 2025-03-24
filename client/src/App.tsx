@@ -4,6 +4,7 @@ import { Switch, Route } from "wouter";
 import Home from "@/pages/Home";
 import Leaderboard from "@/pages/Leaderboard";
 import StreamRewards from "@/pages/StreamRewards";
+import RankRewards from "@/pages/RankRewards";
 import NotFound from "@/pages/not-found";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/" component={Home} />
         <Route path="/leaderboard" component={Leaderboard} />
         <Route path="/stream-rewards" component={StreamRewards} />
+        <Route path="/rank-rewards" component={RankRewards} />
         <Route component={NotFound} />
       </Switch>
       {showScrollToTop && <ScrollToTop />}

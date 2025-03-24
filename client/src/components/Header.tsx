@@ -52,6 +52,11 @@ const Header = () => {
               label="Stream Rewards"
               isActive={location === "/stream-rewards"}
             />
+            <NavLink
+              href="/rank-rewards"
+              label="Rank Rewards"
+              isActive={location === "/rank-rewards"}
+            />
             <a
               href="https://stake.com/?c=penny"
               target="_blank"
