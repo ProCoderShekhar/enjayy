@@ -34,7 +34,7 @@ const StreamRewards = () => {
                 icon={<Calendar className="text-sky-400" size={24} />}
                 description="Join us daily for live giveaways, gambling sessions, and exclusive rewards. Check schedule for exact times."
                 buttonText="Subscribe"
-                buttonLink="https://www.twitch.tv/imenjayy"
+                buttonLink="http://kick.com/enjayy"
                 delay={0.1}
               />
               <StreamInfoCard 
@@ -217,15 +217,15 @@ const StreamRewards = () => {
             >
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://www.twitch.tv/imenjayy"
+                  href="http://kick.com/enjayy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-purple-700 text-white font-medium hover:opacity-90 transition"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-[#53fc18] to-green-600 text-black font-medium hover:opacity-90 transition"
                 >
-                  <div className="w-5 h-5 mr-2 flex items-center justify-center text-white">
-                    T
+                  <div className="w-5 h-5 mr-2 flex items-center justify-center text-black">
+                    K
                   </div>
-                  Join on Twitch
+                  Join on Kick
                   <ChevronRight size={18} className="ml-1" />
                 </a>
                 <a
@@ -291,10 +291,10 @@ const StreamRewards = () => {
                     <h4 className="text-lg font-semibold mb-4 text-white">Additional Benefits</h4>
                     <ul className="space-y-3">
                       {[
-                        "Priority entry into larger giveaways",
-                        "Exclusive subscriber-only giveaways",
+                        "70% Boosted Stream Rewards",
+                        "Exclusive code user only giveaways",
                         "Loyalty points for consistent participation",
-                        "Special monthly bonus draws for regular viewers"
+                        "Special monthly raffle draws for all viewers"
                       ].map((item, index) => (
                         <li key={index} className="flex items-start">
                           <div className="text-sky-400 mr-3 flex-shrink-0">
