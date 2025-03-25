@@ -273,10 +273,8 @@ const RankRewards = () => {
                     Enhanced rewards during live streams. Diamond rank users receive 70% more than standard rewards during streams.
                   </p>
                   <div className="text-sm text-sky-400">
-                    <Link href="/stream-rewards">
-                      <a className="hover:underline">
-                        View stream schedule
-                      </a>
+                    <Link href="/stream-rewards" className="hover:underline">
+                      View stream schedule
                     </Link>
                   </div>
                 </div>
@@ -311,10 +309,8 @@ const RankRewards = () => {
                   Join with code PENNY
                   <ChevronRight size={18} className="ml-1" />
                 </a>
-                <Link href="/stream-rewards">
-                  <a className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white/10 text-white font-medium hover:bg-white/15 transition">
-                    View Stream Rewards
-                  </a>
+                <Link href="/stream-rewards" className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white/10 text-white font-medium hover:bg-white/15 transition">
+                  View Stream Rewards
                 </Link>
               </div>
             </motion.div>
