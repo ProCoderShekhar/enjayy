@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { X, ChevronRight, Home, Trophy, Gift, Award } from "lucide-react";
+import { X, ChevronRight, Home, Trophy, Gift, Award, ArrowRightLeft } from "lucide-react";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -27,6 +27,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     { href: "/leaderboard", label: "Leaderboard", icon: <Trophy size={20} /> },
     { href: "/stream-rewards", label: "Stream Rewards", icon: <Gift size={20} /> },
     { href: "/rank-rewards", label: "Rank Rewards", icon: <Award size={20} /> },
+    { href: "/vip-transfer", label: "VIP Transfer", icon: <ArrowRightLeft size={20} /> },
   ];
 
   return (

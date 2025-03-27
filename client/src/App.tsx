@@ -5,6 +5,7 @@ import Home from "@/pages/Home";
 import Leaderboard from "@/pages/Leaderboard";
 import StreamRewards from "@/pages/StreamRewards";
 import RankRewards from "@/pages/RankRewards";
+import VipTransfer from "@/pages/VipTransfer";
 import NotFound from "@/pages/not-found";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/leaderboard" component={Leaderboard} />
         <Route path="/stream-rewards" component={StreamRewards} />
         <Route path="/rank-rewards" component={RankRewards} />
+        <Route path="/vip-transfer" component={VipTransfer} />
         <Route component={NotFound} />
       </Switch>
       {showScrollToTop && <ScrollToTop />}

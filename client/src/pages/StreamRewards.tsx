@@ -41,8 +41,8 @@ const StreamRewards = () => {
                 title="Multiple Winners"
                 icon={<Users className="text-sky-400" size={24} />}
                 description="Each stream features multiple giveaways with up to 20 winners. More activity means more chances to win."
-                buttonText="Learn More"
-                buttonLink="#stream-rewards-details"
+                buttonText="Join on Kick"
+                buttonLink="http://kick.com/enjayy"
                 delay={0.2}
               />
               <StreamInfoCard 
@@ -229,15 +229,15 @@ const StreamRewards = () => {
                   <ChevronRight size={18} className="ml-1" />
                 </a>
                 <a
-                  href="http://kick.com/enjayy"
+                  href="https://www.twitch.tv/imenjayy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-green-500 to-green-700 text-white font-medium hover:opacity-90 transition"
+                  className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-[#9146FF] to-purple-700 text-white font-medium hover:opacity-90 transition"
                 >
                   <div className="w-5 h-5 mr-2 flex items-center justify-center text-white">
-                    K
+                    T
                   </div>
-                  Join on Kick
+                  Join on Twitch
                   <ChevronRight size={18} className="ml-1" />
                 </a>
               </div>
