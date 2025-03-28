@@ -256,9 +256,9 @@ const VipTransfer = () => {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <h3 className="text-xl font-semibold mb-3">How long does the VIP transfer process take?</h3>
+                  <h3 className="text-xl font-semibold mb-3">Will I lose the VIP on my other account?</h3>
                   <p className="text-gray-300">
-                    Most transfers are processed within 24-48 hours after verification. Complex cases with very high wager amounts may take up to 72 hours for verification.
+                    No, this is not an actual VIP transfer but a way to extra reward players for supporting code PENNY.
                   </p>
                 </motion.div>
 
@@ -269,9 +269,9 @@ const VipTransfer = () => {
                   transition={{ duration: 0.6, delay: 0.3 }}
                   viewport={{ once: true }}
                 >
-                  <h3 className="text-xl font-semibold mb-3">Are there any fees for transferring my VIP status?</h3>
+                  <h3 className="text-xl font-semibold mb-3">Will I receive the VIP rank on the new account for completing the wager?</h3>
                   <p className="text-gray-300">
-                    No, there are no fees associated with transferring your VIP status. The service is completely free for loyal users who switch to code PENNY.
+                    No, this is again, not an actual VIP transfer but a way to extra reward players for supporting code PENNY.
                   </p>
                 </motion.div>
                 
@@ -284,7 +284,7 @@ const VipTransfer = () => {
                 >
                   <h3 className="text-xl font-semibold mb-3">Can I transfer VIP status from multiple sites?</h3>
                   <p className="text-gray-300">
-                    Yes, we can combine your wager history from multiple platforms to determine your total VIP transfer benefits. Just provide details for all platforms.
+                    No, this can only work for the wager on one account, we cannot combine wagers from multiple accounts in VIP transfer.
                   </p>
                 </motion.div>
               </div>
