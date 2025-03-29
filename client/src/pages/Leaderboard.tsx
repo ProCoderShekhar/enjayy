@@ -56,7 +56,7 @@ const Leaderboard = () => {
                     </div>
                   </div>
                   <div className="bg-gradient-to-b from-gray-800 to-black rounded-lg mb-3 w-full overflow-hidden" style={{height: '32px'}}>
-                    <img src="/leaderboard/images/stake.webp" alt="Stake Logo" className="w-full h-full object-cover" />
+                    <img src="https://pennypts.com/leaderboard/images/stake.webp" alt="Stake Logo" className="w-full h-full object-cover" />
                   </div>
                   <h3 className="text-xl font-bold text-white">{topThree[1]?.player}</h3>
                   <p className="text-gray-400 my-1">{topThree[1]?.wagerFormatted}</p>
@@ -86,7 +86,7 @@ const Leaderboard = () => {
                     </div>
                   </div>
                   <div className="bg-gradient-to-b from-gray-800 to-black rounded-lg mb-3 w-full overflow-hidden" style={{height: '36px'}}>
-                    <img src="/leaderboard/images/stake.webp" alt="Stake Logo" className="w-full h-full object-cover" />
+                    <img src="https://pennypts.com/leaderboard/images/stake.webp" alt="Stake Logo" className="w-full h-full object-cover" />
                   </div>
                   <h3 className="text-2xl font-bold text-white">{topThree[0]?.player}</h3>
                   <p className="text-gray-400 my-1">{topThree[0]?.wagerFormatted}</p>
@@ -113,7 +113,7 @@ const Leaderboard = () => {
                     </div>
                   </div>
                   <div className="bg-gradient-to-b from-gray-800 to-black rounded-lg mb-3 w-full overflow-hidden" style={{height: '32px'}}>
-                    <img src="/leaderboard/images/stake.webp" alt="Stake Logo" className="w-full h-full object-cover" />
+                    <img src="https://pennypts.com/leaderboard/images/stake.webp" alt="Stake Logo" className="w-full h-full object-cover" />
                   </div>
                   <h3 className="text-xl font-bold text-white">{topThree[2]?.player}</h3>
                   <p className="text-gray-400 my-1">{topThree[2]?.wagerFormatted}</p>
