@@ -61,31 +61,13 @@ function getRankStyle(rank: number): string {
   }
 }
 
+// Import leaderboard data from JSON file
+import leaderboardDataJson from './json/leaderboard-data.json';
+
 // Parse CSV data into a usable format
 export function getLeaderboardData(): LeaderboardEntry[] {
-  // This is the CSV data converted to JSON
-  const rawData = [
-    { user_name: "B3o", wagered: 63842.74496411661, rank: 1 },
-    { user_name: "PrincessWin", wagered: 22201.87398190254, rank: 2 },
-    { user_name: "AppleEater", wagered: 17867.954955621964, rank: 3 },
-    { user_name: "NachoWinz", wagered: 4879.594161761686, rank: 4 },
-    { user_name: "Sicked12", wagered: 3719.433980842246, rank: 5 },
-    { user_name: "Moon0524", wagered: 2676.9107340391306, rank: 6 },
-    { user_name: "Soreloser66", wagered: 1944.006615586505, rank: 7 },
-    { user_name: "PennyGambl", wagered: 1727.285627521222, rank: 8 },
-    { user_name: "milkshake60", wagered: 1661.339965353862, rank: 9 },
-    { user_name: "Penisgambl3r1", wagered: 832.8317596519237, rank: 10 },
-    { user_name: "Zigma2012", wagered: 659.6834287187198, rank: 11 },
-    { user_name: "MumbaiKingMatt", wagered: 562.0929896994203, rank: 12 },
-    { user_name: "animalkoks", wagered: 555.3735641925446, rank: 13 },
-    { user_name: "Sonusonu7668", wagered: 406.5955254894295, rank: 14 },
-    { user_name: "lopld123", wagered: 318.9770600283511, rank: 15 },
-    { user_name: "Chengcheng76", wagered: 313.19516102808427, rank: 16 },
-    { user_name: "pennyfanboy420", wagered: 250.96817938965503, rank: 17 },
-    { user_name: "Mygame12ki", wagered: 200.78036059818004, rank: 18 },
-    { user_name: "matrix1930", wagered: 126.2153789845914, rank: 19 },
-    { user_name: "PENNYCODE", wagered: 120.63722479320667, rank: 20 }
-  ];
+  // Using the imported JSON data
+  const rawData = leaderboardDataJson;
   
   // Calculate total wager across all participants
   const totalWager = rawData.reduce((sum, entry) => sum + entry.wagered, 0);
